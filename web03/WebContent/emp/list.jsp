@@ -35,7 +35,6 @@
 					</tr>
 					<%
 					String url = "jdbc:mysql://192.168.128.133:3306/scott";
-					//String sql = "select empno, ename, dname, loc from emp A, dept B where A.deptno=B.deptno";
 					String sql = "select A.empno, A.ename, B.dname, B.loc from emp A inner join dept B on A.deptno=B.deptno order by A.empno";
 					
 					Map<String, String> map = System.getenv();
@@ -73,11 +72,14 @@
 					%>
 					
 				</table>
-				<p>
-					<a href="addEmp.jsp">[사원추가]</a>
-					<a href="addDept.jsp">[부서추가]</a>
-				</p>
-				
+				<table width ="600" align ="center" cellspacing="0">
+					<tr>
+						<td>
+							<a href="addEmp.jsp">[사원추가]</a>
+							<a href="addDept.jsp">[부서추가]</a>	
+						</td>
+					</tr>
+				</table>
 			</td>
 		</tr>
 		<tr>
