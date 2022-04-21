@@ -8,6 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%=new Mongo() %>
+<%
+String myPath = ".";
+%>
+<%@ include file="template/header.jspf" %>
+			<img alt="" src="images/index.png" width="100%">
+<%@ include file="template/footer.jspf" %>
 </body>
 </html>
