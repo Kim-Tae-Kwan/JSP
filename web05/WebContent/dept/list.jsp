@@ -38,9 +38,10 @@ String myPath = "..";
 			}
 		}
 		
-		client = new MongoClient();
-		MongoDatabase db = client.getDatabase("testDB");
+		client = new MongoClient("localhost", 20000);
+		MongoDatabase db = client.getDatabase("test01");
 		MongoCollection<Document> coll = db.getCollection("dept02");
+		System.out.println(coll.count());
 		FindIterable<Document> ite = coll.find().skip(5 * (p - 1)).limit(5);
 		MongoCursor<Document> cursor = ite.iterator();
 		while(cursor.hasNext()){

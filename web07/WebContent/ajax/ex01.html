@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            // load
+            // $('#target').load('source.html',function(responseText,textStatus,xhr){
+            //     console.log(textStatus);
+            // });
+            
+            // Parameter
+            // $('#target').load('ex02.jsp','name=amdin',function(responseText,textStatus,xhr){
+            //     console.log(responseText);
+            // });
+            
+
+            // GET
+            // XML
+            // $.get('test.xml', function(a,b,c,){
+            //     $(a).find('row').each(function(idx, ele){
+            //         $('#target').append('<div>'+ $(ele).children().last().text()+'</div>');
+            //     })
+            // });
+
+            // JSON
+            // getJSON() -> .json이 아닌 확장자 파일 Serialize 함.
+            // $.get('test.jsp', function(a,b,c,){
+            //     $(a.root).each(function(idx, ele){
+            //         console.log(ele);
+            //         $('<div/>').text(ele.key2).appendTo("#target")
+            //     });
+            // },'json');
+            // $.getJSON('test.jsp', function(a,b,c,){
+            //     $(a.root).each(function(idx, ele){
+            //         $('<div/>').text(ele.key2).appendTo("#target")
+            //     });
+            // });
+
+            // POST
+            // $.post('test.jsp', function(a,b,c,){
+            //     $(a.root).each(function(idx, ele){
+            //         console.log(ele);
+            //         $('<div/>').text(ele.key2).appendTo("#target")
+            //     });
+            // },'json');
+            
+            // ajax() 메소드
+            var callback1 = function(mgs){
+                $.ajax({
+                    type: 'post',
+                    url : 'test.jsp',
+                    data : 'name=' + mgs,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    dataType : 'json',
+                    success : function(data){
+                        console.log('succeess', typeof data, data);
+                        $(data.root).each(function(idx, ele){
+                            console.log(ele);
+                            $('<div/>').html('<span>' + ele.key1 + '</span>'
+                                            + '<span>' + ele.key2 + '</span>').prependTo("#target")
+                        });
+                    },
+                    error: function(xhr, statusMsg,errMsg){
+                        console.log(statusMsg,errMsg);
+                        alert('비동기 통신 실패.')
+                    }
+                })
+            };
+            $('input').on('change', function(){
+                console.log(typeof this);
+                var msg = this.value;
+                callback1(msg);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <h1>ajax</h1>
+    <input type="text">
+    <div id="target"></div>
+</body>
+</html>

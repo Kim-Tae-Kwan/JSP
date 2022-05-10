@@ -46,8 +46,8 @@ try{
 ////
 MongoClient client = null;
 try{
-	client = new MongoClient();
-	MongoDatabase db = client.getDatabase("testDB");
+	client = new MongoClient("localhost", 20000);
+	MongoDatabase db = client.getDatabase("test01");
 	MongoCollection<Document> coll = db.getCollection("dept02");
 	Document document = new Document("_id", deptno);
 	document.append("dname", dname);

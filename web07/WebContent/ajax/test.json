@@ -1,0 +1,8 @@
+{
+    "root" : [
+        {"key" : 1, "key2" : "name1"},
+        {"key" : 2, "key2" : "name2"},
+        {"key" : 3, "key2" : "name3"},
+        {"key" : 4, "key2" : "name4"}
+    ]
+}

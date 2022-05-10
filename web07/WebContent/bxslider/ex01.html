@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/jquery.bxslider.min.css">
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery.bxslider.min.js"></script>
+    <script>
+        var option = {
+            mode : 'horizontal',
+            speed : 1500,
+            slideMargin : 10,
+            slideWidth : 600,
+            pause : 1000,
+            nextSelector : 'button:eq(1)',
+            prevSelector : 'button:eq(0)',
+            pagerType : 'short',
+            pagerSelector : 'button:eq(2)'
+        };
+        $(function(){
+            $('.slider').bxSlider(option);
+        });
+        
+    </script>
+</head>
+<body>
+    <div><h1>asdfds</h1></div>
+    <div class="slider">
+        <div><img src="https://dummyimage.com/600x400/000/fff&text=img1" title="img1"></div>
+        <div><img src="https://dummyimage.com/600x400/000/fff&text=img2" title="img2"></div>
+        <div><img src="https://dummyimage.com/600x400/000/fff&text=img3" title="img3"></div>
+        <div><img src="https://dummyimage.com/600x400/000/fff&text=img4" title="img4"></div>
+        <div><img src="https://dummyimage.com/600x400/000/fff&text=img5" title="img5"></div>
+        <div><img src="https://dummyimage.com/600x400/000/fff&text=img6" title="img6"></div>
+    </div>
+    <button>prev</button>
+    <button>next</button>
+    <button>여기</button>
+</body>
+</html>
