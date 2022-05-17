@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Get & Post</h1>
+	<a href="#">get</a>
+	<form action="./ex08" method="post">
+		<input type="text" name="id">
+		<button>전송</button>
+	</form>
+	<script type="text/javascript">
+		var msg = "한글";
+		document.querySelector('a').onclick= function(){
+			window.location.href="/servlet01/ex08?id=" + msg;
+			return false;
+		}
+		encodeURIComponent();
+		encodeURI();
+	
+	</script>
+	
+</body>
+</html>
