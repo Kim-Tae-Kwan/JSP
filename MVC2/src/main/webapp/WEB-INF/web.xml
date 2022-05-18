@@ -9,26 +9,53 @@
   	<servlet-name>index</servlet-name>
   	<servlet-class>com.bit.controller.IndexController</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>empList</servlet-name>
-  	<servlet-class>com.bit.controller.EmpListController</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>addEmp</servlet-name>
-  	<servlet-class>com.bit.controller.EmpAddController</servlet-class>
-  </servlet>
-  
   <servlet-mapping>
   	<servlet-name>index</servlet-name>
   	<url-pattern>/index.html</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>empList</servlet-name>
+  	<servlet-class>com.bit.controller.EmpListController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>empList</servlet-name>
   	<url-pattern>/emp/list.html</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>addEmp</servlet-name>
+  	<servlet-class>com.bit.controller.EmpAddController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>addEmp</servlet-name>
   	<url-pattern>/emp/add.html</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>detailEmp</servlet-name>
+  	<servlet-class>com.bit.controller.EmpDetailController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>detailEmp</servlet-name>
+  	<url-pattern>/emp/detail.html</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>editEmp</servlet-name>
+  	<servlet-class>com.bit.controller.EmpEditController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>editEmp</servlet-name>
+  	<url-pattern>/emp/edit.html</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>deleteEmp</servlet-name>
+  	<servlet-class>com.bit.controller.EmpDeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>deleteEmp</servlet-name>
+  	<url-pattern>/emp/delete.html</url-pattern>
+  </servlet-mapping>
 </web-app>

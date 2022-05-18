@@ -65,10 +65,10 @@
 					for(EmpDto bean : list){
 					%>
 						<tr>
-							<td><a href="#"><%=bean.getEmpno() %></a></td>
-							<td><a href="#"><%=bean.getEname() %></a></td>
-							<td><a href="#"><%=bean.getHiredate() %></a></td>
-							<td><a href="#"><%=bean.getSal() %></a></td>
+							<td><a href="detail.html?idx=<%=bean.getEmpno() %>"><%=bean.getEmpno() %></a></td>
+							<td><a href="detail.html?idx=<%=bean.getEmpno() %>"><%=bean.getEname() %></a></td>
+							<td><a href="detail.html?idx=<%=bean.getEmpno() %>"><%=bean.getHiredate() %></a></td>
+							<td><a href="detail.html?idx=<%=bean.getEmpno() %>"><%=bean.getSal() %></a></td>
 						</tr>
 					<%}%>
 					</tbody>

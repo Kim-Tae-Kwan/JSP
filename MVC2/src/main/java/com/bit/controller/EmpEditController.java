@@ -1,0 +1,48 @@
+package com.bit.controller;
+
+import java.io.IOException;
+import java.sql.Timestamp;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.bit.model.EmpDao;
+import com.bit.model.EmpDto;
+
+public class EmpEditController extends HttpServlet {
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		int empno = Integer.parseInt(req.getParameter("idx"));
+		EmpDao dao = new EmpDao();
+		EmpDto bean = dao.getOne(empno);
+		req.setAttribute("emp", bean);
+		RequestDispatcher rd = req.getRequestDispatcher("edit.jsp");
+		rd.forward(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		int empno = Integer.parseInt(req.getParameter("empno"));
+		int sal = Integer.parseInt(req.getParameter("sal"));
+		String ename = req.getParameter("ename");
+		String job = req.getParameter("job");
+		Timestamp hiredate = Timestamp.valueOf(req.getParameter("hiredate"));
+		
+		EmpDto bean = new EmpDto();
+		bean.setEmpno(empno);
+		bean.setEname(ename);
+		bean.setHiredate(hiredate);
+		bean.setJob(job);
+		bean.setSal(sal);
+		
+		EmpDao dao = new EmpDao();
+		dao.updateOne(bean);
+		
+		resp.sendRedirect("detail.html?idx=" + empno);
+	}
+}

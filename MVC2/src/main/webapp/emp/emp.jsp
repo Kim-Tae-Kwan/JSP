@@ -23,6 +23,9 @@
 	});
 </script>
 </head>
+<%
+	EmpDto bean = (EmpDto) request.getAttribute("emp");
+%>
 <body>
 	<div class="container">
 		<div id="menu" class="row">
@@ -50,23 +53,31 @@
 				<!-- content start -->
 				
 				<div class="page-header">
-				  <h1>EMP Add Page<small>EMP add</small></h1>
+				  <h1>EMP Detail Page<small>EMP 상세보기</small></h1>
 				</div>
 				<form method="post">
 				  <div class="form-group">
 				    <label for="empno">empno</label>
-				    <input type="text" class="form-control" name="empno" id="empno" placeholder="empno">
+				    <input type="text" class="form-control" value="<%=bean.getEmpno() %>" name="empno" id="empno" placeholder="empno" readonly/>
 				  </div>
 				  <div class="form-group">
 				    <label for="ename">ename</label>
-				    <input type="text" class="form-control" name="ename" id="ename" placeholder="ename">
+				    <input type="text" class="form-control" value="<%=bean.getEname() %>" name="ename" id="ename" placeholder="ename" readonly/>
 				  </div>
 				  <div class="form-group">
 				    <label for="sal">sal</label>
-				    <input type="text" class="form-control" name="sal" id="sal" placeholder="sal">
+				    <input type="text" class="form-control" value="<%=bean.getSal() %>" name="sal" id="sal" placeholder="sal" readonly/>
 				  </div>
-				  <button type="submit" class="btn btn-primary btn-block">입력</button>
-				  <button type="reset" class="btn btn-danger btn-block">초기화</button>
+				  <div class="form-group">
+				    <label for="hiredate">hiredate</label>
+				    <input type="text" class="form-control" value="<%=bean.getHiredate() %>" name="hiredate" id="hiredate" placeholder="hiredate" readonly/>
+				  </div>
+				  <div class="form-group">
+				    <label for="job">job</label>
+				    <input type="text" class="form-control" value="<%=bean.getJob() %>" name="job" id="job" placeholder="job" readonly/>
+				  </div>
+				  <a href="edit.html?idx=<%=bean.getEmpno() %>" role="button" class="btn btn-primary btn-block">수정</a>
+				  <a href="delete.html?idx=<%=bean.getEmpno() %>" role="button" class="btn btn-danger btn-block">삭제</a>
 				  <button type="button" class="btn btn-default btn-block">뒤로</button>
 				</form>
 				
