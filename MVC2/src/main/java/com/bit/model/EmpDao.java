@@ -96,4 +96,19 @@ public class EmpDao {
 			e.printStackTrace();
 		}
 	}
+
+	public void deleteOne(int empno) {
+		String sql = "delete from emp where empno = ?";
+		try(
+				Connection conn = Mysql.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+			){
+				pstmt.setInt(1, empno);
+				pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 }
