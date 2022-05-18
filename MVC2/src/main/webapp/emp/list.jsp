@@ -35,7 +35,13 @@
 				    	<a href="../dept/list.html" class="btn btn-default">DEPT</a>
 				    </p>
 				    <p class="navbar-text navbar-right">
-				    	<a href="../login/index.html" class="btn btn-default">LOGIN</a>
+				    	<%if(session.getAttribute("result")  != null) {
+				    		out.println(session.getAttribute("id").toString() + "님 로그인 중...");
+				    	%>
+				    		<a href="../login/index.html" class="btn btn-default">LOGOUT</a>
+				    	<%}else{ %>
+				    		<a href="../login/index.html" class="btn btn-default">LOGIN</a>
+				    	<%} %>
 				    </p>
 				  </div>
 				</nav>
