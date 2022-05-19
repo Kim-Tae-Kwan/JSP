@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>servlet01</display-name>
+  <display-name>Servlet01</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -9,7 +9,6 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <servlet-name>ex01</servlet-name>
     <servlet-class>com.bit.controller.step01</servlet-class>
@@ -18,7 +17,6 @@
     <servlet-name>ex01</servlet-name>
     <url-pattern>/ex01.html</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ex02</servlet-name>
     <servlet-class>com.bit.controller.step02</servlet-class>
@@ -27,7 +25,6 @@
     <servlet-name>ex02</servlet-name>
     <url-pattern>/ex02</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ex03</servlet-name>
     <servlet-class>com.bit.controller.step04</servlet-class>
@@ -36,7 +33,6 @@
     <servlet-name>ex03</servlet-name>
     <url-pattern>/ex03</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ex05</servlet-name>
     <servlet-class>com.bit.controller.step05</servlet-class>
@@ -45,7 +41,6 @@
     <servlet-name>ex05</servlet-name>
     <url-pattern>/ex05</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ex07</servlet-name>
     <servlet-class>com.bit.controller.step07</servlet-class>
@@ -54,7 +49,6 @@
     <servlet-name>ex07</servlet-name>
     <url-pattern>/ex07</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ex08</servlet-name>
     <servlet-class>com.bit.controller.step08</servlet-class>
@@ -63,7 +57,6 @@
     <servlet-name>ex08</servlet-name>
     <url-pattern>/ex08</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ex11</servlet-name>
     <servlet-class>com.bit.controller.Ex11</servlet-class>
@@ -72,7 +65,6 @@
     <servlet-name>ex11</servlet-name>
     <url-pattern>/ex11.html</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>empXml</servlet-name>
     <servlet-class>com.bit.controller.Ex12</servlet-class>
@@ -81,7 +73,6 @@
     <servlet-name>empXml</servlet-name>
     <url-pattern>/emp.xml</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>addXml</servlet-name>
     <servlet-class>com.bit.controller.Ex13</servlet-class>
