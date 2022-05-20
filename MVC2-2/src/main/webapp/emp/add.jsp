@@ -73,25 +73,31 @@
 					</h1>
 				</div>
 				<form class="form-horizontal" method="post">
+					<%if(request.getAttribute("err") != null){ %>
+					<div class="alert alert-danger alert-dismissible" role="alert">
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>Warning!</strong> <%=request.getAttribute("err") %>
+					</div>
+					<%} %>
 					<div class="form-group">
 						<label for="empno" class="col-sm-2 control-label">empno</label>
 						<div class="col-sm-10">
 							<input type="text" name="empno" class="form-control" id="empno"
-								placeholder="empno">
+								placeholder="empno" value="<%=request.getParameter("empno") == null ? "" : request.getParameter("empno")%>">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="ename" class="col-sm-2 control-label">ename</label>
 						<div class="col-sm-10">
 							<input type="text" name="ename" class="form-control" id="ename"
-								placeholder="ename">
+								placeholder="ename" value="<%=request.getParameter("ename") == null ? "" : request.getParameter("ename")%>">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="sal" class="col-sm-2 control-label">sal</label>
 						<div class="col-sm-10">
 							<input type="text" name="sal" class="form-control" id="sal"
-								placeholder="sal">
+								placeholder="sal" value="<%=request.getParameter("sal") == null ? "" : request.getParameter("sal")%>">
 						</div>
 					</div>
 					<div class="form-group">

@@ -1,3 +1,4 @@
+<%@page import="com.bit.emp.model.EmpDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,11 +20,23 @@
 <script type="text/javascript">
 $(function(){
 	$('button[type="reset"]').parent().hide();
+	$('#empno, #ename, #sal').prop('readonly', true);
+	$('#content form').one('submit',function(e){
+		e.preventDefault();
+		$('.page-header>h1').html($('.page-header>h1').html().replace('상세', '수정'));
+		$('#ename, #sal').removeProp('readonly');
+		$('button[type="reset"]').parent().show().prev().hide();
+	});
 	
-	//$('button[type="reset"]').parent().show().prev().hide();
+	$('button').click(function(e){
+		if($(e.target).html() == '삭제'){
+			$.post('delEmp.html', 'empno=<%=request.getParameter("empno")%>',function(){
+				location.href='./emp.html';
+			});
+		}
+	});
 	
-	
-	
+	if('<%=request.getParameter("sal")%>' != 'null') {$('button[type="submit"]').click();} 
 });
 
 </script>
@@ -67,25 +80,28 @@ $(function(){
 			  <h1>상세 페이지<small>EMP Detail</small></h1>
 			</div>
 			<form class="form-horizontal" method="post">
+				<%
+				EmpDto bean = (EmpDto) request.getAttribute("bean");
+				%>
 				<div class="form-group">
 					<label for="empno" class="col-sm-2 control-label">empno</label>
 					<div class="col-sm-10">
 						<input type="text" name="empno" class="form-control" id="empno"
-							placeholder="empno">
+							placeholder="empno" value="<%=request.getParameter("empno") != null ? request.getParameter("empno") : bean.getEmpno()%>">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="ename" class="col-sm-2 control-label">ename</label>
 					<div class="col-sm-10">
 						<input type="text" name="ename" class="form-control" id="ename"
-							placeholder="ename">
+							placeholder="ename" value="<%=request.getParameter("ename") != null ? request.getParameter("ename") : bean.getEname()%>">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="sal" class="col-sm-2 control-label">sal</label>
 					<div class="col-sm-10">
 						<input type="text" name="sal" class="form-control" id="sal"
-							placeholder="sal">
+							placeholder="sal" value="<%=request.getParameter("sal") != null ? request.getParameter("sal") : bean.getSal()%>">
 					</div>
 				</div>
 				<div class="form-group">
