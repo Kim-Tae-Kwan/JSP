@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+		</div>
+	</div>
+	<div id="footer" class="row">
+	  <div class="col-xs-12 col-sm-offset-2 col-md-10">
+	  	<address>
+		  <strong>비트교육센터</strong><br>
+		  부산광역시<br>
+		  <abbr title="Phone">P:</abbr> (123) 456-7890
+		</address>
+		<address>
+		  <strong>&copy; by bitacademy co.ltd. All rights reserved. http://www.bitacademy.com</strong><br>
+		  <a href="https://www.bitacademy.com/">https://www.bitacademy.com/</a><br>
+		</address>
+	  </div>
+	</div>
+</div>
